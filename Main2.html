@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>OnShop</title>
+   <style media="screen">
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: "Poppins", sans-serif;
+}
+
+body{
+ min-height: 100vh;
+ background: white;
+ color: white;
+ background-size: cover;
+ background-position: center;
+}
+
+.side-bar{
+ background: #1b1a1b;
+ backdrop-filter: blur(15px);
+ width: 250px;
+ height: 100vh;
+ position: fixed;
+ top: 0;
+ left: -250px;
+ overflow-y: auto;
+ transition: 0.6s ease;
+ transition-property: left;
+}
+.side-bar::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+
+.side-bar.active{
+ left: 0;
+}
+h1{
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  padding-bottom: 13px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+
+.side-bar .menu{
+ width: 100%;
+ margin-top: 30px;
+}
+
+.side-bar .menu .item{
+ position: relative;
+ cursor: pointer;
+}
+
+.side-bar .menu .item a{
+ color: #fff;
+ font-size: 16px;
+ text-decoration: none;
+ display: block;
+ padding: 5px 30px;
+ line-height: 60px;
+}
+
+.side-bar .menu .item a:hover{
+ background: #33363a;
+ transition: 0.3s ease;
+}
+
+.side-bar .menu .item i{
+ margin-right: 15px;
+}
+
+.side-bar .menu .item a .dropdown{
+ position: absolute;
+ right: 0;
+ margin: 20px;
+ transition: 0.3s ease;
+}
+
+.side-bar .menu .item .sub-menu{
+ background: #262627;
+ display: none;
+}
+
+.side-bar .menu .item .sub-menu a{
+ padding-left: 80px;
+}
+
+.rotate{
+ transform: rotate(90deg);
+}
+
+.close-btn{
+ position: absolute;
+ color: #fff;
+
+ font-size: 23px;
+ right:  0px;
+ margin: 15px;
+ cursor: pointer;
+}
+
+<!--.menu-btn{
+ position: absolute;
+ color: rgb(0, 0, 0);
+ font-size: 25px;
+padding-top:0px;
+ margin: 25px;
+ cursor: pointer;
+}-->
+.menu-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 40px;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.main{
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 50px;
+}
+.mainhead h1
+{
+	text-align:left;
+}
+.main h1{
+ color: rgba(255, 255, 255, 0.8);
+ font-size: 60px;
+ text-align: center;
+ line-height: 80px;
+}
+.main
+@media (max-width: 900px){
+ .main h1{
+   font-size: 40px;
+   line-height: 60px;
+ }
+}
+img{
+  width: 100px;
+  margin: 15px;
+  border-radius: 50%;
+  margin-left: 70px;
+  border: 3px solid #b4b8b9;
+}
+header{
+  background: #33363a;
+}
+.mainhead
+{
+	color: black;
+background-color: lightblue;
+padding:30px;
+
+}
+#logoimg
+{
+	border-radius: 0%;
+	margin: 0px;
+	border: 0px solid #b4b8b9;
+}
+.mySlides img{
+border-radius: 0%;
+	margin: 0px;
+	border: 0px solid #b4b8b9;
+display:none;
+}
+#cartimg
+{
+	border-radius: 0%;
+	margin: 0px;
+	border: 0px solid #b4b8b9;
+	width:50px;
+	height:50px;
+}
+
+   </style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+ </head>
+ <body>
+<table width="120%" class="mainhead">
+<tr>
+<td width="45%" class="menu-btn">
+     <i class="fas fa-bars"></i>
+</td >
+<td width="15%">
+<img id="logoimg" src="Logo.png" width="80" height="80" alt="No image" align="right"></img>
+</td>
+<td width="40%">
+    <h1 class="mainhead" font-size="45px" padding="10px"><b>On Shop</b></h1>
+	<pre padding="-5px">       --An Easy Find</pre>
+</td>
+<td width="20%">
+</td>
+</tr>
+</table>
+<div class="w3-content w3-section" align="center">
+  <a href="electronics.html"><img class="mySlides" src="SlideImages\electronics.jpg" style="width:60%" alt="Not found"></a>
+  <a href="furniture.html"><img class="mySlides" src="SlideImages\furniture.jpg" style="width:60%" alt="Not found"></a>
+  <a href="groceries.html"><img class="mySlides" src="SlideImages\grocery.jpg" style="width:60%" alt="Not found"></a>
+  <a href="HouseHold.html"><img class="mySlides" src="SlideImages\household.jpg" style="width:60%" alt="Not found"></a>
+</div>
+
+
+   <!--<div class="menu-btn">
+     <i class="fas fa-bars"></i>
+   </div>-->
+
+
+   <div class="side-bar">
+
+     <header>
+     <div class="close-btn">
+
+       <i class="fas fa-times"></i>
+     </div>
+     <img src="Logo.png" alt="Not Found" >
+          <h1>OnShop</h1>
+        </header>
+     <div class="menu">
+      <div class="item"><a href="aboutus.html"><i class="fas fa-th"></i>About us</a></div>
+       <div class="item"><a href="Login.html"><i class="fas fa-th"></i>Login</a></div>
+	 <div class="item"><a href="register.html"><i class="fas fa-th"></i>registration</a></div>
+       <div class="item">
+         <a class="sub-btn"><i class="fas fa-table"></i>Items<i class="fas fa-angle-right dropdown"></i></a>
+         <div class="sub-menu">
+           <a href="electronics.html" class="sub-item">Electronics</a>
+           <a href="furniture.html" class="sub-item">Furniture</a>
+           <a href="groceries.html" class="sub-item">Grocery</a>
+	     <a href="HouseHold.html" class="sub-item">House Hold</a>
+         </div>
+       </div>
+</div>
+
+
+   
+
+   <script type="text/javascript">
+   $(document).ready(function(){
+     //jquery for toggle sub menus
+     $('.sub-btn').click(function(){
+       $(this).next('.sub-menu').slideToggle();
+       $(this).find('.dropdown').toggleClass('rotate');
+     });
+
+     //jquery for expand and collapse the sidebar
+     $('.menu-btn').click(function(){
+       $('.side-bar').addClass('active');
+       $('.menu-btn').css("visibility", "hidden");
+     });
+
+     $('.close-btn').click(function(){
+       $('.side-bar').removeClass('active');
+       $('.menu-btn').css("visibility", "visible");
+     });
+   });
+var myIndex = 0;
+slideshow();
+
+function slideshow() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(slideshow, 2000); // Change image every 5 seconds
+}
+
+   </script>
+
+ </body>
+</html>

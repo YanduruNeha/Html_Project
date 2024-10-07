@@ -1,0 +1,117 @@
+<html>
+<head>
+	<title>ONSHOP Registration </title>
+<style>
+	.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 10px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
+
+
+.registerbtn:hover {
+  opacity: 1;
+}
+	</style>
+	<script>
+function validate()
+{
+	var fullname=document.register.uname.value;
+	if(fullname==''||fullname=='null')
+		{
+		alert("please enter your name");
+		return false;
+		}
+	var pass=document.register.pwd.value;
+	var y=pass.length
+	if(pass=='' || pass=="null")
+		{
+		alert("please enter password");
+		return false;
+		}
+	
+	var mobil=document.register.mo.value;
+	if(mobil=='' || mobil=='null')
+	{
+			alert("please enter mobile number");
+			return false;
+	}
+	var x=mobil.length
+	if(fullname!=''|| fullname!='null')
+		{
+			if(pass!='' || pass!="null")
+			{
+				if(mobil!='' || mobil!='null')
+				{
+					if(isNaN(mobil) || x!=10)
+					{
+						alert("please enter valid mobile number");
+					}
+					else if(y<6)
+					{
+					alert("password must be atleast 6 characters");
+					}
+					else
+					{
+						window.location.href='Main2.html';
+					}
+				}
+			}
+		}
+		
+}
+</script>
+</head>
+
+<body bgcolor="#FAA08C">
+	
+<form name=register>
+<table align="center" width="35%"   cellspacing="10">
+<th>
+<h1 width="25%">ON SHOP</h1>
+</th>
+<tr>
+	<td><b>Your Name:</b></td>
+</tr>
+<tr>
+	<td><input type="text" placeholder="Enter first and last name" name="uname" style="height: 35px;width:90% ;"></td>
+</tr>
+<tr>
+	<td><b>Mobile Number</body></td>
+</tr>
+<tr>	
+	<td><input type="tel" placeholder="Enter Mobile number" name="mo" style="height: 35px;width:90% ;" ></td>
+
+</tr>
+<tr>
+	<td><b>Email(optional)</b></td>
+</tr>
+<tr>
+	<td><input type="text"  style="height: 35px;width:90% ;"></td>
+</tr>
+<tr>
+	<td><b>Password</b></td>
+</tr>
+<tr>
+	<td><input type="Password"  placeholder="Atleast 6 characters" name="pwd" style="height: 35px;width:90% ;"></td>
+</tr>
+
+<tr>
+<td><p>By creating an account, you will be able to shop in <b>ONSHOP</b></p></td>
+</tr>
+<tr>
+	<td><center><input type="Button" name="Register" value="Register" class="registerbtn" onclick="validate()"></center></td>
+</tr>
+<tr>
+<td><p>Already,have an account? <a href="Login.html">Sign in Here</a></p></td>
+</tr>
+
+</table>
+</form>
+</body>
+</html>

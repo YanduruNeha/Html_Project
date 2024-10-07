@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>
+        Login Page
+    </title>
+<style>
+.user
+{
+font-size:23px;
+}
+input[type=button]{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+<script>
+function validate()
+{
+	var fullname=document.login.uname.value;
+	if(fullname==''||fullname=='null')
+		{
+		alert("please enter valid user name");
+		return false;
+		}
+	var pass=document.login.pwd.value;
+	if(pass=='' || pass=="null")
+		{
+		alert("please enter password");
+		return false;
+		}
+		if(fullname!=''|| fullname!='null')
+		{
+			if(pass!='' || pass!="null")
+			{
+				onsubmitm();
+			}
+		}
+		
+}
+function onsubmitm()
+{
+	window.location.href='Main2.html';
+}
+</script>
+</head>
+<body bgcolor="#FAA08C">
+    <center>
+        <h1>Login Page</h1>
+    </center>
+</br>
+<center><img src="Loginimg.png"  width="200" height="200"/></center></br></br>
+    <form name="login">
+        <table  width="20%" align="center">
+<tr>
+	<td>
+		<label class="user">Enter Username:</label>
+	</td>
+	<td>
+		<input type="text" placeholder="Enter Username" name="uname" style="size:30;height:35px;">
+	</td>
+</tr>
+<tr>
+	<td>
+		<label class="user">Enter Password:</label>	
+	</td>
+	<td>
+		<input type="password" placeholder="Enter Password" name="pwd" style="size:30;height:35px;">
+	</td>
+</tr>
+</table>
+<br/>
+<center><input type="button" name="Submit" value="Submit" onclick="validate()">
+<tr><td><p>If you are new to this web application?<a href="register.html">Sign upHere</a></p></td></tr>
+
+</form>
+</body>
+</html>
